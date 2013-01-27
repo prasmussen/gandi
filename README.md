@@ -9,7 +9,7 @@ It currently consist of the following tools: `gandi-contact` `gandi-operation` `
 used instead of each tool separately (i.e `gandi zone list` will execute `gandi-domain-zone list`).
 
 ## Prerequisites
-None, binaries are statically linked  
+None, binaries are statically linked
 If you want to compile from source you need the [go toolchain](http://golang.org/doc/install)
 
 ## Installation
@@ -17,7 +17,7 @@ If you want to compile from source you need the [go toolchain](http://golang.org
 
 ## First run
 The first time one of the tools are executed it will prompt for your gandi API keys which can be found
-[here](https://www.gandi.net/admin/api_key).  
+[here](https://www.gandi.net/admin/api_key).
 The API keys is by default stored in $HOME/.gandi/config (can be overridden with the -c flag).
 
 ## Examples
@@ -38,11 +38,11 @@ against the production API.
     Handle: JD1337-GANDI
 
 ###### Check for domain availability
-    $ gandi domain --testing available --name bazqux.com                                                                                                                                                                                                                                                         
+    $ gandi domain --testing available --name bazqux.com
     Status: available
 
 ###### Register domain
-    $ gandi domain --testing create --name bazqux.com --contact JD1337-GANDI --years 1                                                                                                                                                                                                                           
+    $ gandi domain --testing create --name bazqux.com --contact JD1337-GANDI --years 1
     DateCreated: 2013-01-27 23:44:10 +0000 UTC
     DateStart: 0001-01-01 00:00:00 +0000 UTC
     DateUpdated: 2013-01-27 23:44:10 +0000 UTC
@@ -86,7 +86,7 @@ against the production API.
     Created version 2
 
 ###### Add A record to zone
-    $ gandi record --testing add --id 681917 --version 2 --name foo --type A --value 10.0.0.100 --ttl 3600                                                                                                                                                                                                      
+    $ gandi record --testing add --id 681917 --version 2 --name foo --type A --value 10.0.0.100 --ttl 3600
     Id: 3566725
     Name: foo
     Ttl: 3600
@@ -115,7 +115,7 @@ against the production API.
 
 ###### List all record on active version
     $ gandi record --testing list --id 681917
-    Id         Name      TTL     Type     Value                           
-    3566725    foo       3600    A        10.0.0.100                      
-    3566726    foo       3600    AAAA     2001:db8:85a3::8a2e:370:7334    
+    Id         Name      TTL     Type     Value
+    3566725    foo       3600    A        10.0.0.100
+    3566726    foo       3600    AAAA     2001:db8:85a3::8a2e:370:7334
     3566727    foobar    3600    CNAME    foobar.com.
