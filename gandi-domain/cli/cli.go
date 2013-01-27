@@ -74,7 +74,7 @@ func (self *Domain) Info(name string) {
     util.PrintStruct(info)
 }
 
-func (self *Domain) Create(name, contact string, years int) {
+func (self *Domain) Create(name, contact string, years int64) {
     info, err := self.domain.Create(name, contact, years)
     if err != nil {
         fmt.Println(err)

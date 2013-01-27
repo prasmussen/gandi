@@ -49,13 +49,17 @@ func FormatBool(b bool) string {
     return strings.Title(strconv.FormatBool(b))
 }
 
-func JoinInt(numbers []int, sep string) string {
+func Itoa64(i int64) string {
+    return strconv.FormatInt(i, 10)
+}
+
+func JoinInt(numbers []int64, sep string) string {
     var res string
     for i, n := range numbers {
         if i > 0 {
             res += sep
         }
-        res += strconv.Itoa(n) //strconv.FormatInt(n, 10)
+        res += strconv.FormatInt(n, 10)
     }
     return res
 }
@@ -192,8 +196,8 @@ func printStruct(s interface{}, indent string) {
             switch t := value.(type) {
                 case []string:
                     fmt.Printf("%s%s: %v\n", indent, name, strings.Join(value.([]string), ", "))
-                case []int:
-                    fmt.Printf("%s%s: %v\n", indent, name, JoinInt(value.([]int), ", "))
+                case []int64:
+                    fmt.Printf("%s%s: %v\n", indent, name, JoinInt(value.([]int64), ", "))
                 default:
                     fmt.Printf("%s%s: <Unhandled type: %v>\n", indent, name, t)
             }

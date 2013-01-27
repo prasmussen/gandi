@@ -2,7 +2,6 @@ package cli
 
 import (
     "fmt"
-    "strconv"
     "github.com/prasmussen/gandi-api/domain/zone/version"
     "github.com/prasmussen/gandi/util"
 )
@@ -16,7 +15,7 @@ func New(d *version.Version) *Version {
     return &Version{d}
 }
 
-func (self *Version) Count(zoneId int) {
+func (self *Version) Count(zoneId int64) {
     count, err := self.version.Count(zoneId)
     if err != nil {
         fmt.Println(err)
@@ -25,7 +24,7 @@ func (self *Version) Count(zoneId int) {
     fmt.Println("Count:", count)
 }
 
-func (self *Version) List(zoneId int) {
+func (self *Version) List(zoneId int64) {
     versions, err := self.version.List(zoneId)
     if err != nil {
         fmt.Println(err)
@@ -36,7 +35,7 @@ func (self *Version) List(zoneId int) {
     order := []string{"Id", "Date Created"}
     for _, version := range versions {
         columns = append(columns, map[string]string{
-            "Id": strconv.Itoa(version.Id),
+            "Id": util.Itoa64(version.Id),
             "Date Created": util.TimeToLocal(version.DateCreated),
         })
     }
@@ -44,7 +43,7 @@ func (self *Version) List(zoneId int) {
     util.PrintColumns(columns, order, 4)
 }
 
-func (self *Version) New(zoneId, version int) {
+func (self *Version) New(zoneId, version int64) {
     version, err := self.version.New(zoneId, version)
     if err != nil {
         fmt.Println(err)
@@ -53,7 +52,7 @@ func (self *Version) New(zoneId, version int) {
     fmt.Printf("Created version %d\n", version)
 }
 
-func (self *Version) Delete(zoneId, version int) {
+func (self *Version) Delete(zoneId, version int64) {
     deleted, err := self.version.Delete(zoneId, version)
     if err != nil {
         fmt.Println(err)
@@ -62,7 +61,7 @@ func (self *Version) Delete(zoneId, version int) {
     fmt.Printf("Deleted: %s\n", util.FormatBool(deleted));
 }
 
-func (self *Version) Set(zoneId, version int) {
+func (self *Version) Set(zoneId, version int64) {
     ok, err := self.version.Set(zoneId, version)
     if err != nil {
         fmt.Println(err)

@@ -34,7 +34,7 @@ type Options struct {
     Create struct {
         Name string `goptions:"-n, --name, obligatory, description='Domain name'"`
         Contact string `goptions:"-c, --contact, obligatory, description='Contact handle'"`
-        Years int `goptions:"-y, --years, obligatory, description='Years to register the domain for'"`
+        Years int64 `goptions:"-y, --years, obligatory, description='Years to register the domain for'"`
     } `goptions:"create"`
 }
 

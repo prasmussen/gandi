@@ -2,7 +2,6 @@ package cli
 
 import (
     "fmt"
-    "strconv"
     "github.com/prasmussen/gandi-api/operation"
     "github.com/prasmussen/gandi/util"
 )
@@ -24,7 +23,7 @@ func (self *Operation) Count() {
     fmt.Println("Count:", count)
 }
 
-func (self *Operation) Info(id int) {
+func (self *Operation) Info(id int64) {
     info, err := self.operation.Info(id)
     if err != nil {
         fmt.Println(err)
@@ -33,7 +32,7 @@ func (self *Operation) Info(id int) {
     util.PrintStruct(info)
 }
 
-func (self *Operation) Cancel(id int) {
+func (self *Operation) Cancel(id int64) {
     ok, err := self.operation.Cancel(id)
     if err != nil {
         fmt.Println(err)
@@ -58,7 +57,7 @@ func (self *Operation) List() {
     order := []string{"Id", "Source", "Step", "Type", "Created", "Updated"}
     for _, operation := range operations {
         columns = append(columns, map[string]string{
-            "Id": strconv.Itoa(operation.Id),
+            "Id": util.Itoa64(operation.Id),
             "Source": operation.Source,
             "Step": operation.Step,
             "Type": operation.Type,

@@ -24,11 +24,11 @@ type Options struct {
     List shared.NoArgs `goptions:"list"`
 
     Info struct {
-        Id int `goptions:"-i, --id, obligatory, description='Operation id'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Operation id'"`
     } `goptions:"info"`
 
     Cancel struct {
-        Id int `goptions:"-i, --id, obligatory, description='Operation id'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Operation id'"`
     } `goptions:"cancel"`
 }
 

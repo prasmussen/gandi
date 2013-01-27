@@ -21,26 +21,26 @@ type Options struct {
     goptions.Verbs
 
     Count struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
     } `goptions:"count"`
 
     List struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
     } `goptions:"list"`
 
     Delete struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
-        Version int `goptions:"-v, --version, obligatory, description='Zone version'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Version int64 `goptions:"-v, --version, obligatory, description='Zone version'"`
     } `goptions:"delete"`
 
     Set struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
-        Version int `goptions:"-v, --version, obligatory, description='Zone version'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Version int64 `goptions:"-v, --version, obligatory, description='Zone version'"`
     } `goptions:"set"`
 
     New struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
-        Version int `goptions:"-v, --version, description='Zone version'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Version int64 `goptions:"-v, --version, description='Zone version'"`
     } `goptions:"new"`
 }
 

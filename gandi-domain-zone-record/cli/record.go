@@ -2,7 +2,6 @@ package cli
 
 import (
     "fmt"
-    "strconv"
     "github.com/prasmussen/gandi-api/domain/zone/record"
     "github.com/prasmussen/gandi/util"
 )
@@ -15,7 +14,7 @@ func New(d *record.Record) *Record {
     return &Record{d}
 }
 
-func (self *Record) Count(zoneId, version int) {
+func (self *Record) Count(zoneId, version int64) {
     count, err := self.record.Count(zoneId, version)
     if err != nil {
         fmt.Println(err)
@@ -24,7 +23,7 @@ func (self *Record) Count(zoneId, version int) {
     fmt.Println("Count:", count)
 }
 
-func (self *Record) List(zoneId, version int) {
+func (self *Record) List(zoneId, version int64) {
     records, err := self.record.List(zoneId, version)
     if err != nil {
         fmt.Println(err)
@@ -35,9 +34,9 @@ func (self *Record) List(zoneId, version int) {
     order := []string{"Id", "Name", "TTL", "Type", "Value"}
     for _, record := range records {
         columns = append(columns, map[string]string{
-            "Id": strconv.Itoa(record.Id),
+            "Id": util.Itoa64(record.Id),
             "Name": record.Name,
-            "TTL": strconv.Itoa(record.Ttl),
+            "TTL": util.Itoa64(record.Ttl),
             "Type": record.Type,
             "Value": record.Value,
         })
@@ -55,7 +54,7 @@ func (self *Record) Add(args record.RecordAdd) {
     util.PrintStruct(info)
 }
 
-func (self *Record) Delete(zoneId, version, recordId int) {
+func (self *Record) Delete(zoneId, version, recordId int64) {
     deleted, err := self.record.Delete(zoneId, version, recordId)
     if err != nil {
         fmt.Println(err)
@@ -64,7 +63,7 @@ func (self *Record) Delete(zoneId, version, recordId int) {
     fmt.Printf("Deleted: %s\n", util.FormatBool(deleted));
 }
 
-//func (self *Record) Set(domainName string, id int) {
+//func (self *Record) Set(domainName string, id int64) {
 //    info, err := self.record.Set(domainName, id)
 //    if err != nil {
 //        fmt.Println(err)

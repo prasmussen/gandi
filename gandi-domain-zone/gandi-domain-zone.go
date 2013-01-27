@@ -24,7 +24,7 @@ type Options struct {
     List shared.NoArgs `goptions:"list"`
 
     Info struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
     } `goptions:"info"`
 
     Create struct {
@@ -32,11 +32,11 @@ type Options struct {
     } `goptions:"create"`
 
     Delete struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
     } `goptions:"delete"`
 
     Set struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
         Name string `goptions:"-n, --name, obligatory, description='Domain name'"`
     } `goptions:"set"`
 }

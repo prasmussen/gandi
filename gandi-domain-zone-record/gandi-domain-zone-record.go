@@ -23,19 +23,19 @@ type Options struct {
     Add api.RecordAdd `goptions:"add"`
 
     Count struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
-        Version int `goptions:"-v, --version, description='Zone version'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Version int64 `goptions:"-v, --version, description='Zone version'"`
     } `goptions:"count"`
 
     List struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
-        Version int `goptions:"-v, --version, description='Zone version'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Version int64 `goptions:"-v, --version, description='Zone version'"`
     } `goptions:"list"`
 
     Delete struct {
-        Id int `goptions:"-i, --id, obligatory, description='Zone id'"`
-        Version int `goptions:"-v, --version, obligatory, description='Zone version'"`
-        Record int `goptions:"-r, --record, obligatory, description='Record id'"`
+        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Version int64 `goptions:"-v, --version, obligatory, description='Zone version'"`
+        Record int64 `goptions:"-r, --record, obligatory, description='Record id'"`
     } `goptions:"delete"`
 }
 

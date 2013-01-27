@@ -2,7 +2,6 @@ package cli
 
 import (
     "fmt"
-    "strconv"
     "github.com/prasmussen/gandi-api/domain/zone"
     "github.com/prasmussen/gandi/util"
 )
@@ -35,9 +34,9 @@ func (self *Zone) List() {
     order := []string{"Id", "Name", "Version", "Public", "Updated"}
     for _, zone := range zones {
         columns = append(columns, map[string]string{
-            "Id": strconv.Itoa(zone.Id),
+            "Id": util.Itoa64(zone.Id),
             "Name": zone.Name,
-            "Version": strconv.Itoa(zone.Version),
+            "Version": util.Itoa64(zone.Version),
             "Public": util.FormatBool(zone.Public),
             "Updated": util.TimeToLocal(zone.DateUpdated),
         })
@@ -46,7 +45,7 @@ func (self *Zone) List() {
     util.PrintColumns(columns, order, 4)
 }
 
-func (self *Zone) Info(id int) {
+func (self *Zone) Info(id int64) {
     info, err := self.zone.Info(id)
     if err != nil {
         fmt.Println(err)
@@ -64,7 +63,7 @@ func (self *Zone) Create(name string) {
     util.PrintStruct(info)
 }
 
-func (self *Zone) Delete(id int) {
+func (self *Zone) Delete(id int64) {
     deleted, err := self.zone.Delete(id)
     if err != nil {
         fmt.Println(err)
@@ -73,7 +72,7 @@ func (self *Zone) Delete(id int) {
     fmt.Printf("Deleted: %s\n", util.FormatBool(deleted));
 }
 
-func (self *Zone) Set(domainName string, id int) {
+func (self *Zone) Set(domainName string, id int64) {
     info, err := self.zone.Set(domainName, id)
     if err != nil {
         fmt.Println(err)
