@@ -7,7 +7,7 @@ PLATFORMS="darwin/386 darwin/amd64 freebsd/386 freebsd/amd64 linux/386 linux/amd
 APPS="gandi gandi-contact gandi-domain gandi-domain-zone gandi-domain-zone-record gandi-domain-zone-version gandi-operation"
 
 # Remove old binaries
-rm -rvf bin/*
+rm -rf bin/*
 
 for APP_NAME in $APPS; do
     # Build binary for each platform in parallel
