@@ -33,7 +33,7 @@ type Options struct {
 
     Set struct {
         Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
-        Name string `goptions:"-n, --name, obligatory, description='Domain name'"`
+        Domain string `goptions:"-d, --domain, obligatory, description='Domain name'"`
     } `goptions:"set"`
 }
 
@@ -71,7 +71,7 @@ func main() {
             zone.Delete(opts.Delete.Zone)
 
         case "set":
-            zone.Set(opts.Set.Name, opts.Set.Zone)
+            zone.Set(opts.Set.Domain, opts.Set.Zone)
 
         default:
             goptions.PrintHelp()
