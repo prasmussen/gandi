@@ -96,6 +96,17 @@ fi
 
 
 
+# Set zone on domain
+ID=$(gandi zone --testing set --zone ${ZONE_ID} --domain ${DOMAIN} | awk '/^ZoneId:/ {print $2}')
+
+if [[ "$ID" != "$ZONE_ID" ]]; then
+    echo "Failed to set zone on domain"
+else
+    echo "Zone is now active on domain"
+fi
+
+
+
 # Display records on active zone
 echo "These are the active records for ${DOMAIN}"
 echo
