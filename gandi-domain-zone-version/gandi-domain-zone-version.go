@@ -8,10 +8,6 @@ import (
     api "github.com/prasmussen/gandi-api/domain/zone/version"
 )
 
-const (
-    VersionNumber = "1.0.0"
-)
-
 type Options struct {
     Testing bool `goptions:"-t, --testing, description='Perform queries against the test platform (OT&E)'"`
     ConfigPath string `goptions:"-c, --config, description='Set config path. Defaults to ~/.gandi/config'"`
@@ -50,7 +46,7 @@ func main() {
 
     // Print version number and exit if the version flag is set
     if opts.Version {
-        fmt.Printf("gandi-domain-zone-version v%s\n", VersionNumber)
+        fmt.Printf("gandi-domain-zone-version v%s\n", shared.VersionNumber)
         return
     }
 

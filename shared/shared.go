@@ -7,6 +7,10 @@ import (
     "github.com/prasmussen/gandi-api/client"
 )
 
+const (
+    VersionNumber = "1.0.0"
+)
+
 type NoArgs struct {}
 
 func NewGandiClient(configPath string, testing bool) *client.Client {
