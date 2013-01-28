@@ -8,7 +8,7 @@ import (
 )
 
 const (
-    VersionNumber = "1.0.0"
+    VersionNumber = "1.0.1"
 )
 
 type NoArgs struct {}
