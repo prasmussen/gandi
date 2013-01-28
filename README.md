@@ -38,11 +38,11 @@ against the production API.
     Handle: JD1337-GANDI
 
 ###### Check for domain availability
-    $ gandi domain --testing available --name bazqux.com
+    $ gandi domain --testing available --domain bazqux.com
     Status: available
 
 ###### Register domain
-    $ gandi domain --testing create --name bazqux.com --contact JD1337-GANDI --years 1
+    $ gandi domain --testing create --domain bazqux.com --contact JD1337-GANDI --years 1
     DateCreated: 2013-01-27 23:44:10 +0000 UTC
     DateStart: 0001-01-01 00:00:00 +0000 UTC
     DateUpdated: 2013-01-27 23:44:10 +0000 UTC
@@ -82,11 +82,11 @@ against the production API.
     Versions: 1
 
 ###### Create a new zone version since we cant modify the active version
-    $ gandi version --testing new --id 681917
+    $ gandi version --testing new --zone 681917
     Created version 2
 
 ###### Add A record to zone
-    $ gandi record --testing add --id 681917 --version 2 --name foo --type A --value 10.0.0.100 --ttl 3600
+    $ gandi record --testing add --zone 681917 --version 2 --name foo --type A --value 10.0.0.100 --ttl 3600
     Id: 3566725
     Name: foo
     Ttl: 3600
@@ -94,7 +94,7 @@ against the production API.
     Value: 10.0.0.100
 
 ###### Add AAAA record to zone
-    $ gandi record --testing add --id 681917 --version 2 --name foo --type AAAA --value 2001:0db8:85a3:0000:0000:8a2e:0370:7334 --ttl 3600
+    $ gandi record --testing add --zone 681917 --version 2 --name foo --type AAAA --value 2001:0db8:85a3:0000:0000:8a2e:0370:7334 --ttl 3600
     Id: 3566726
     Name: foo
     Ttl: 3600
@@ -102,7 +102,7 @@ against the production API.
     Value: 2001:db8:85a3::8a2e:370:7334
 
 ###### Add CNAME record to zone
-    $ gandi record --testing add --id 681917 --version 2 --name foobar --type CNAME --value foobar.com. --ttl 3600
+    $ gandi record --testing add --zone 681917 --version 2 --name foobar --type CNAME --value foobar.com. --ttl 3600
     Id: 3566727
     Name: foobar
     Ttl: 3600
@@ -110,11 +110,11 @@ against the production API.
     Value: foobar.com.
 
 ###### Set version 2 active
-    $ gandi version --testing set --id 681917 --version 2
+    $ gandi version --testing set --zone 681917 --version 2
     OK: True
 
 ###### List all record on active version
-    $ gandi record --testing list --id 681917
+    $ gandi record --testing list --zone 681917
     Id         Name      TTL     Type     Value
     3566725    foo       3600    A        10.0.0.100
     3566726    foo       3600    AAAA     2001:db8:85a3::8a2e:370:7334
