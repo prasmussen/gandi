@@ -24,11 +24,11 @@ type Options struct {
     List shared.NoArgs `goptions:"list"`
 
     Info struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Operation id'"`
+        Operation int64 `goptions:"-o, --operation, obligatory, description='Operation id'"`
     } `goptions:"info"`
 
     Cancel struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Operation id'"`
+        Operation int64 `goptions:"-o, --operation, obligatory, description='Operation id'"`
     } `goptions:"cancel"`
 }
 
@@ -57,10 +57,10 @@ func main() {
             operation.List()
 
         case "info":
-            operation.Info(opts.Info.Id)
+            operation.Info(opts.Info.Operation)
 
         case "cancel":
-            operation.Cancel(opts.Cancel.Id)
+            operation.Cancel(opts.Cancel.Operation)
 
         default:
             goptions.PrintHelp()

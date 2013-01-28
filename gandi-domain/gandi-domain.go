@@ -24,15 +24,15 @@ type Options struct {
     List shared.NoArgs `goptions:"list"`
 
     Info struct {
-        Name string `goptions:"-n, --name, obligatory, description='Domain name'"`
+        Domain string `goptions:"-d, --domain, obligatory, description='Domain name'"`
     } `goptions:"info"`
 
     Available struct {
-        Name string `goptions:"-n, --name, obligatory, description='Domain name'"`
+        Domain string `goptions:"-d, --domain, obligatory, description='Domain name'"`
     } `goptions:"available"`
 
     Create struct {
-        Name string `goptions:"-n, --name, obligatory, description='Domain name'"`
+        Domain string `goptions:"-d, --domain, obligatory, description='Domain name'"`
         Contact string `goptions:"-c, --contact, obligatory, description='Contact handle'"`
         Years int64 `goptions:"-y, --years, obligatory, description='Years to register the domain for'"`
     } `goptions:"create"`
@@ -63,14 +63,14 @@ func main() {
             domain.List()
 
         case "info":
-            domain.Info(opts.Info.Name)
+            domain.Info(opts.Info.Domain)
 
         case "available":
-            domain.Available(opts.Available.Name)
+            domain.Available(opts.Available.Domain)
 
         case "create":
             args := opts.Create
-            domain.Create(args.Name, args.Contact, args.Years)
+            domain.Create(args.Domain, args.Contact, args.Years)
 
         default:
             goptions.PrintHelp()

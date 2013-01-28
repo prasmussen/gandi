@@ -23,17 +23,17 @@ type Options struct {
     Add api.RecordAdd `goptions:"add"`
 
     Count struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
         Version int64 `goptions:"-v, --version, description='Zone version'"`
     } `goptions:"count"`
 
     List struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
         Version int64 `goptions:"-v, --version, description='Zone version'"`
     } `goptions:"list"`
 
     Delete struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
         Version int64 `goptions:"-v, --version, obligatory, description='Zone version'"`
         Record int64 `goptions:"-r, --record, obligatory, description='Record id'"`
     } `goptions:"delete"`
@@ -58,17 +58,17 @@ func main() {
 
     switch opts.Verbs {
         case "count":
-            record.Count(opts.Count.Id, opts.Count.Version)
+            record.Count(opts.Count.Zone, opts.Count.Version)
 
         case "list":
-            record.List(opts.List.Id, opts.List.Version)
+            record.List(opts.List.Zone, opts.List.Version)
 
         case "add":
             record.Add(opts.Add)
 
         case "delete":
             args := opts.Delete
-            record.Delete(args.Id, args.Version, args.Record)
+            record.Delete(args.Zone, args.Version, args.Record)
 
         default:
             goptions.PrintHelp()

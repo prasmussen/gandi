@@ -24,7 +24,7 @@ type Options struct {
     List shared.NoArgs `goptions:"list"`
 
     Info struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
     } `goptions:"info"`
 
     Create struct {
@@ -32,11 +32,11 @@ type Options struct {
     } `goptions:"create"`
 
     Delete struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
     } `goptions:"delete"`
 
     Set struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
         Name string `goptions:"-n, --name, obligatory, description='Domain name'"`
     } `goptions:"set"`
 }
@@ -66,16 +66,16 @@ func main() {
             zone.List()
 
         case "info":
-            zone.Info(opts.Info.Id)
+            zone.Info(opts.Info.Zone)
 
         case "create":
             zone.Create(opts.Create.Name)
 
         case "delete":
-            zone.Delete(opts.Delete.Id)
+            zone.Delete(opts.Delete.Zone)
 
         case "set":
-            zone.Set(opts.Set.Name, opts.Set.Id)
+            zone.Set(opts.Set.Name, opts.Set.Zone)
 
         default:
             goptions.PrintHelp()

@@ -21,25 +21,25 @@ type Options struct {
     goptions.Verbs
 
     Count struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
     } `goptions:"count"`
 
     List struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
     } `goptions:"list"`
 
     Delete struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
         Version int64 `goptions:"-v, --version, obligatory, description='Zone version'"`
     } `goptions:"delete"`
 
     Set struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
         Version int64 `goptions:"-v, --version, obligatory, description='Zone version'"`
     } `goptions:"set"`
 
     New struct {
-        Id int64 `goptions:"-i, --id, obligatory, description='Zone id'"`
+        Zone int64 `goptions:"-z, --zone, obligatory, description='Zone id'"`
         Version int64 `goptions:"-v, --version, description='Zone version'"`
     } `goptions:"new"`
 }
@@ -63,19 +63,19 @@ func main() {
 
     switch opts.Verbs {
         case "count":
-            version.Count(opts.Count.Id)
+            version.Count(opts.Count.Zone)
 
         case "list":
-            version.List(opts.List.Id)
+            version.List(opts.List.Zone)
 
         case "new":
-            version.New(opts.New.Id, opts.New.Version)
+            version.New(opts.New.Zone, opts.New.Version)
 
         case "delete":
-            version.Delete(opts.Delete.Id, opts.Delete.Version)
+            version.Delete(opts.Delete.Zone, opts.Delete.Version)
 
         case "set":
-            version.Set(opts.Set.Id, opts.Set.Version)
+            version.Set(opts.Set.Zone, opts.Set.Version)
 
         default:
             goptions.PrintHelp()
