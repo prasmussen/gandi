@@ -119,3 +119,44 @@ against the production API.
     3566725    foo       3600    A        10.0.0.100
     3566726    foo       3600    AAAA     2001:db8:85a3::8a2e:370:7334
     3566727    foobar    3600    CNAME    foobar.com.
+
+###### Set zone on domain
+    $ gandi zone --testing set --zone 681917 --domain bazqux.com 
+    AuthInfo: ******
+    DateCreated: 2013-01-27 23:44:26 +0000 UTC
+    DateRegistryCreation: 2013-01-27 22:44:25 +0000 UTC
+    DateRegistryEnd: 2014-01-27 22:44:25 +0000 UTC
+    DateUpdated: 2013-01-27 23:44:26 +0000 UTC
+    Fqdn: bazqux.com
+    Id: 2997
+    Status: clientTransferProhibited
+    Tld: com
+    DateDelete: 2014-02-26 12:44:25 +0000 UTC
+    DateHoldBegin: 2014-01-27 22:44:25 +0000 UTC
+    DateHoldEnd: 2014-02-26 22:44:25 +0000 UTC
+    DatePendingDeleteEnd: 2014-04-02 22:44:25 +0000 UTC
+    DateRenewBegin: 2012-01-01 00:00:00 +0000 UTC
+    DateRestoreEnd: 2014-03-28 22:44:25 +0000 UTC
+    Nameservers: a.dns.gandi-ote.net, b.dns.gandi-ote.net, c.dns.gandi-ote.net
+    Services: gandidns
+    ZoneId: 681917
+    Autorenew:
+        Active: false
+        Id: 0
+        ProductId: 0
+        ProductTypeId: 0
+    Contacts:
+        Admin:
+            Handle: JD1337-GANDI
+            Id: 1337
+        Bill:
+            Handle: JD1337-GANDI
+            Id: 1337
+        Owner:
+            Handle: JD1337-GANDI
+            Id: 1337
+        Reseller:
+            Id: 0
+        Tech:
+            Handle: JD1337-GANDI
+            Id: 1337
