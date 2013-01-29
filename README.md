@@ -9,7 +9,7 @@ It currently consist of the following tools: `gandi-contact` `gandi-operation` `
 used instead of each tool separately (i.e `gandi zone list` will execute `gandi-domain-zone list`).
 
 ## Prerequisites
-None, binaries are statically linked
+None, binaries are statically linked.
 If you want to compile from source you need the [go toolchain](http://golang.org/doc/install)
 
 ## Installation
