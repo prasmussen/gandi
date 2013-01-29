@@ -15,6 +15,18 @@ If you want to compile from source you need the [go toolchain](http://golang.org
 ## Installation
 - Save all binaries to a location in your PATH (i.e. `/usr/local/bin/`)
 
+### Downloads
+- [gandi-1.0.2-darwin-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnVGlXWWNFQnFIYWM)
+- [gandi-1.0.2-darwin-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbndEV5RFVSU2NQX2c)
+- [gandi-1.0.2-freebsd-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnZGROekprenUwY1E)
+- [gandi-1.0.2-freebsd-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnRGVuRkl2dzVMZjg)
+- [gandi-1.0.2-linux-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbndGlqU2lfTzVLbFE)
+- [gandi-1.0.2-linux-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnTGQzX0lOb0V6S0U)
+- [gandi-1.0.2-linux-arm.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6Embnc1BlWnN3enpFak0)
+- [gandi-1.0.2-linux-arm5.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnTWZueE5hV0dQVGs)
+- [gandi-1.0.2-windows-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnTXNOTmpTa1lmUVk)
+- [gandi-1.0.2-windows-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbncG1XNmpTdUVOUWs)
+
 ## First run
 The first time one of the tools are executed it will prompt for your gandi API keys which can be found
 [here](https://www.gandi.net/admin/api_key).
