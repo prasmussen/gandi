@@ -21,6 +21,6 @@ gandi-domain-zone
             -z, --zone Zone id (*)
         list:
         set:
-            -z, --zone Zone id (*)
-            -n, --name Domain name (*)
+            -z, --zone   Zone id (*)
+            -d, --domain Domain name (*)
     

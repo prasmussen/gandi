@@ -7,8 +7,8 @@ gandi
     
     Available commands:
       version
-      zone
-      record
-      contact
       operation
+      zone
+      contact
       domain
+      record
