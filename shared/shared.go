@@ -1,8 +1,6 @@
 package shared
 
 import (
-    "os"
-    "fmt"
     "github.com/prasmussen/gandi/config"
     "github.com/prasmussen/gandi-api/client"
 )
@@ -30,10 +28,5 @@ func NewGandiClient(configPath string, testing bool) *client.Client {
     }
 
     // Create gandi client
-    c, err := client.New(apiKey, systemType)
-    if err != nil {
-        fmt.Println(err)
-        os.Exit(1)
-    }
-    return c
+    return client.New(apiKey, systemType)
 }
