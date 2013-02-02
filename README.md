@@ -16,16 +16,16 @@ If you want to compile from source you need the [go toolchain](http://golang.org
 - Save all binaries to a location in your PATH (i.e. `/usr/local/bin/`)
 
 ### Downloads
-- [gandi-1.0.2-darwin-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnVGlXWWNFQnFIYWM)
-- [gandi-1.0.2-darwin-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbndEV5RFVSU2NQX2c)
-- [gandi-1.0.2-freebsd-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnZGROekprenUwY1E)
-- [gandi-1.0.2-freebsd-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnRGVuRkl2dzVMZjg)
-- [gandi-1.0.2-linux-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbndGlqU2lfTzVLbFE)
-- [gandi-1.0.2-linux-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnTGQzX0lOb0V6S0U)
-- [gandi-1.0.2-linux-arm.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6Embnc1BlWnN3enpFak0)
-- [gandi-1.0.2-linux-arm5.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnTWZueE5hV0dQVGs)
-- [gandi-1.0.2-windows-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnTXNOTmpTa1lmUVk)
-- [gandi-1.0.2-windows-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbncG1XNmpTdUVOUWs)
+- [gandi-1.0.3-darwin-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnZzBaVTFoZ3h2N2s)
+- [gandi-1.0.3-darwin-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6Embnb25KSGRjSWF1ZUE)
+- [gandi-1.0.3-freebsd-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnX2NnTmhmMHNJZTA)
+- [gandi-1.0.3-freebsd-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnbGU0SkVpS3IyekU)
+- [gandi-1.0.3-linux-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnUXFTUDd4WkYtbUE)
+- [gandi-1.0.3-linux-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnX3NPbDZTUmJWZFk)
+- [gandi-1.0.3-linux-arm.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnUGhmT09UOE5BTVU)
+- [gandi-1.0.3-linux-arm5.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnLXFzbnl2Wi1BNE0)
+- [gandi-1.0.3-windows-386.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnMElzNndjM2V0MW8)
+- [gandi-1.0.3-windows-amd64.tar.gz](https://drive.google.com/uc?id=0B3X9GlR6EmbnYjkzekRwVHVuSU0)
 
 ## First run
 The first time one of the tools are executed it will prompt for your gandi API keys which can be found
